@@ -1,0 +1,5 @@
+<map id="LoserSleeperAI" name="LoserSleeperAI">
+<area shape="rect" id="node1" title="Configuration class for the LoserSleeperAIThinker." alt="" coords="5,388,116,495"/>
+<area shape="rect" id="node2" href="$class_a_i_player.html" title="Base class for AI player configuration classes." alt="" coords="7,160,114,340"/>
+<area shape="rect" id="node3" href="$interface_i_player.html" title="Defines a player for the ColorShapeLinks board game." alt="" coords="7,5,114,112"/>
+</map>

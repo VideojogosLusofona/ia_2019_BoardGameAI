@@ -1,0 +1,14 @@
+<map id="SessionController" name="SessionController">
+<area shape="rect" id="node1" title="Script which controls ColorShapeLinks sessions, which can include one or more matches." alt="" coords="275,1623,506,2389"/>
+<area shape="rect" id="node2" href="$interface_i_match_data_provider.html" title="Defines a data provider for ColorShapeLinks matches." alt="" coords="539,299,703,435"/>
+<area shape="rect" id="node9" href="$class_match_controller.html" title="Script which controls ColorShapeLinks matches." alt="" coords="710,1204,893,1545"/>
+<area shape="rect" id="node10" href="$class_match_view.html" title="Script which renders the matches UI." alt="" coords="723,608,879,1081"/>
+<area shape="rect" id="node3" href="$interface_i_session_data_provider.html" title="Defines a data provider for ColorShapeLinks sessions, which include one or more matches." alt="" coords="56,725,243,964"/>
+<area shape="rect" id="node7" href="$class_session_view.html" title="Script which renders the session UI." alt="" coords="5,1189,203,1560"/>
+<area shape="rect" id="node4" href="$class_board.html" title="Represents the game board." alt="" coords="970,189,1115,545"/>
+<area shape="rect" id="node5" href="$struct_piece.html" title="Represents a board piece." alt="" coords="997,5,1088,127"/>
+<area shape="rect" id="node6" href="$interface_i_player.html" title="Defines a player for the ColorShapeLinks board game." alt="" coords="437,791,544,898"/>
+<area shape="rect" id="node8" href="$struct_match.html" title="Represents one match in a session." alt="" coords="328,1299,453,1450"/>
+<area shape="rect" id="node11" href="$class_human_move_button.html" title="Script that controls a UI button for performing human moves." alt="" coords="728,219,883,516"/>
+<area shape="rect" id="node12" href="$struct_pos.html" title="Represents a board position." alt="" coords="904,791,995,898"/>
+</map>

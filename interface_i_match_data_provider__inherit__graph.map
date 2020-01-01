@@ -1,0 +1,4 @@
+<map id="IMatchDataProvider" name="IMatchDataProvider">
+<area shape="rect" id="node1" title="Defines a data provider for ColorShapeLinks matches." alt="" coords="39,5,203,141"/>
+<area shape="rect" id="node2" href="$class_session_controller.html" title="Script which controls ColorShapeLinks sessions, which can include one or more matches." alt="" coords="5,189,236,1059"/>
+</map>

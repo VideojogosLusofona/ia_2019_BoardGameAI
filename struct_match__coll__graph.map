@@ -1,0 +1,4 @@
+<map id="Match" name="Match">
+<area shape="rect" id="node1" title="Represents one match in a session." alt="" coords="5,220,131,371"/>
+<area shape="rect" id="node2" href="$interface_i_player.html" title="Defines a player for the ColorShapeLinks board game." alt="" coords="15,5,121,112"/>
+</map>

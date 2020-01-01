@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['pcolor_70',['PColor',['../_p_color_8cs.html#a454da1503a1df4a04403f597d85576aa',1,'PColor.cs']]],
+  ['pcolor_2ecs_71',['PColor.cs',['../_p_color_8cs.html',1,'']]],
+  ['piece_72',['Piece',['../struct_piece.html',1,'Piece'],['../struct_piece.html#ab5b4deeb03800084130f830e419f3637',1,'Piece.Piece()'],['../struct_move.html#aece77781ba7686b6e050dfa3cef634b3',1,'Move.piece()']]],
+  ['piece_2ecs_73',['Piece.cs',['../_piece_8cs.html',1,'']]],
+  ['piececount_74',['PieceCount',['../class_board.html#ac6b859492685128681a7a80660eed7df',1,'Board']]],
+  ['piecesinsequence_75',['piecesInSequence',['../class_board.html#add5bfb1f37937535b65aaf2dedfac3ac',1,'Board']]],
+  ['player1_76',['player1',['../struct_match.html#a85733942f85cdf724fe7d25011249f32',1,'Match']]],
+  ['player2_77',['player2',['../struct_match.html#a7021d8db616f6f3f28ef9fe8303ea5ff',1,'Match']]],
+  ['playername_78',['PlayerName',['../class_a_i_player.html#ac0440b7adb1f9b2d8f3ccb4fd452c653',1,'AIPlayer.PlayerName()'],['../class_loser_sleeper_a_i.html#a4bec85f6490fba97c6fcaaee2b40e0e0',1,'LoserSleeperAI.PlayerName()'],['../class_random_a_i.html#a4bec85f6490fba97c6fcaaee2b40e0e0',1,'RandomAI.PlayerName()'],['../class_sequential_a_i.html#a4bec85f6490fba97c6fcaaee2b40e0e0',1,'SequentialAI.PlayerName()'],['../class_human_player.html#a7a928729abd5796564413abf828bf11a',1,'HumanPlayer.PlayerName()'],['../interface_i_player.html#a7a928729abd5796564413abf828bf11a',1,'IPlayer.PlayerName()']]],
+  ['playerred_79',['PlayerRed',['../interface_i_session_data_provider.html#ad9714927a386c21fee03b2e1d6ba65a4',1,'ISessionDataProvider.PlayerRed()'],['../class_session_controller.html#ad9714927a386c21fee03b2e1d6ba65a4',1,'SessionController.PlayerRed()']]],
+  ['playerwhite_80',['PlayerWhite',['../interface_i_session_data_provider.html#ab1a6044e16268f2870f45bbf69bdc988',1,'ISessionDataProvider.PlayerWhite()'],['../class_session_controller.html#ab1a6044e16268f2870f45bbf69bdc988',1,'SessionController.PlayerWhite()']]],
+  ['plrnamecolor_81',['PlrNameColor',['../class_match_controller.html#a3df06041a5473ffd7c04d453c7c95153',1,'MatchController']]],
+  ['pointsperdraw_82',['pointsPerDraw',['../class_session_controller.html#a4bdb451a56729ef62198e442fffbc4f8',1,'SessionController']]],
+  ['pointsperloss_83',['pointsPerLoss',['../class_session_controller.html#aa7bd96383cb6a11f5ac72235f2347c18',1,'SessionController']]],
+  ['pointsperwin_84',['pointsPerWin',['../class_session_controller.html#ada8a187150330d1391c8d870ddec571d',1,'SessionController']]],
+  ['pos_85',['Pos',['../struct_pos.html',1,'Pos'],['../struct_pos.html#ade160c2503ba8e64611511db2ff5a789',1,'Pos.Pos()']]],
+  ['pos_2ecs_86',['Pos.cs',['../_pos_8cs.html',1,'']]],
+  ['postmatch_87',['PostMatch',['../_session_status_8cs.html#ac82c179a797c0d7c249d1b98a8e3aa8fa2647b37304f1804618ad4bab0e20bd1f',1,'SessionStatus.cs']]],
+  ['prematch_88',['PreMatch',['../class_session_view.html#a36eeb2b4c2f76b93523e8d81455056f3',1,'SessionView.PreMatch()'],['../_session_status_8cs.html#ac82c179a797c0d7c249d1b98a8e3aa8fa6aab25b97624572179a6d848c1cbd3f5',1,'PreMatch():&#160;SessionStatus.cs']]],
+  ['pressbuttonaftermatch_89',['pressButtonAfterMatch',['../class_session_controller.html#ac8622fa261a1dd266558673178e64935',1,'SessionController']]],
+  ['pressbuttonbeforematch_90',['pressButtonBeforeMatch',['../class_session_controller.html#ab95cad3331e84e5180c6471f8774caee',1,'SessionController']]],
+  ['pshape_91',['PShape',['../_p_shape_8cs.html#a00e07dc7f43614733d64deef8e02022e',1,'PShape.cs']]],
+  ['pshape_2ecs_92',['PShape.cs',['../_p_shape_8cs.html',1,'']]]
+];

@@ -1,0 +1,4 @@
+<map id="SequentialAIThinker" name="SequentialAIThinker">
+<area shape="rect" id="node1" title="Implementation of an AI that will always play in sequence, from the first to the last column...." alt="" coords="5,131,144,208"/>
+<area shape="rect" id="node2" href="$interface_i_thinker.html" title="The actual AI code of specific AIs should be placed in classes which implement this interface." alt="" coords="37,5,112,83"/>
+</map>

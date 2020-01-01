@@ -1,0 +1,9 @@
+<map id="MatchController" name="MatchController">
+<area shape="rect" id="node1" title="Script which controls ColorShapeLinks matches." alt="" coords="299,1144,481,1485"/>
+<area shape="rect" id="node2" href="$class_match_view.html" title="Script which renders the matches UI." alt="" coords="204,608,360,1081"/>
+<area shape="rect" id="node3" href="$class_human_move_button.html" title="Script that controls a UI button for performing human moves." alt="" coords="175,219,330,516"/>
+<area shape="rect" id="node4" href="$class_board.html" title="Represents the game board." alt="" coords="5,189,151,545"/>
+<area shape="rect" id="node5" href="$struct_piece.html" title="Represents a board piece." alt="" coords="33,5,123,127"/>
+<area shape="rect" id="node6" href="$interface_i_match_data_provider.html" title="Defines a data provider for ColorShapeLinks matches." alt="" coords="355,299,519,435"/>
+<area shape="rect" id="node7" href="$struct_pos.html" title="Represents a board position." alt="" coords="534,791,625,898"/>
+</map>

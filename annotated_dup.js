@@ -1,0 +1,27 @@
+var annotated_dup =
+[
+    [ "AIPlayer", "class_a_i_player.html", "class_a_i_player" ],
+    [ "Board", "class_board.html", "class_board" ],
+    [ "FutureMove", "struct_future_move.html", "struct_future_move" ],
+    [ "HumanMoveButton", "class_human_move_button.html", "class_human_move_button" ],
+    [ "HumanPlayer", "class_human_player.html", "class_human_player" ],
+    [ "IMatchDataProvider", "interface_i_match_data_provider.html", "interface_i_match_data_provider" ],
+    [ "IPlayer", "interface_i_player.html", "interface_i_player" ],
+    [ "ISessionDataProvider", "interface_i_session_data_provider.html", "interface_i_session_data_provider" ],
+    [ "IThinker", "interface_i_thinker.html", "interface_i_thinker" ],
+    [ "LoserSleeperAI", "class_loser_sleeper_a_i.html", "class_loser_sleeper_a_i" ],
+    [ "LoserSleeperAIThinker", "class_loser_sleeper_a_i_thinker.html", "class_loser_sleeper_a_i_thinker" ],
+    [ "Match", "struct_match.html", "struct_match" ],
+    [ "MatchController", "class_match_controller.html", "class_match_controller" ],
+    [ "MatchView", "class_match_view.html", "class_match_view" ],
+    [ "Move", "struct_move.html", "struct_move" ],
+    [ "Piece", "struct_piece.html", "struct_piece" ],
+    [ "Pos", "struct_pos.html", "struct_pos" ],
+    [ "RandomAI", "class_random_a_i.html", "class_random_a_i" ],
+    [ "RandomAIThinker", "class_random_a_i_thinker.html", "class_random_a_i_thinker" ],
+    [ "SequentialAI", "class_sequential_a_i.html", "class_sequential_a_i" ],
+    [ "SequentialAIThinker", "class_sequential_a_i_thinker.html", "class_sequential_a_i_thinker" ],
+    [ "SessionController", "class_session_controller.html", "class_session_controller" ],
+    [ "SessionView", "class_session_view.html", "class_session_view" ],
+    [ "WinnerExtensions", "class_winner_extensions.html", "class_winner_extensions" ]
+];

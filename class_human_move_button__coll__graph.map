@@ -1,0 +1,3 @@
+<map id="HumanMoveButton" name="HumanMoveButton">
+<area shape="rect" id="node1" title="Script that controls a UI button for performing human moves." alt="" coords="5,5,160,303"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$interface_i_thinker.html" title="The actual AI code of specific AIs should be placed in classes which implement this interface." alt="" coords="5,56,75,83"/>
+<area shape="rect" id="node2" href="$class_loser_sleeper_a_i_thinker.html" title="Implementation of an AI that will always lose because it takes too long to play." alt="" coords="123,5,277,32"/>
+<area shape="rect" id="node3" href="$class_random_a_i_thinker.html" title="Implementation of an AI that will play randomly." alt="" coords="137,56,263,83"/>
+<area shape="rect" id="node4" href="$class_sequential_a_i_thinker.html" title="Implementation of an AI that will always play in sequence, from the first to the last column...." alt="" coords="131,107,269,133"/>
+</map>

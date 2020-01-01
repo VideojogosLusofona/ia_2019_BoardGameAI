@@ -1,0 +1,5 @@
+<map id="SessionController" name="SessionController">
+<area shape="rect" id="node1" title="Script which controls ColorShapeLinks sessions, which can include one or more matches." alt="" coords="72,292,303,1161"/>
+<area shape="rect" id="node2" href="$interface_i_match_data_provider.html" title="Defines a data provider for ColorShapeLinks matches." alt="" coords="5,57,169,193"/>
+<area shape="rect" id="node3" href="$interface_i_session_data_provider.html" title="Defines a data provider for ColorShapeLinks sessions, which include one or more matches." alt="" coords="194,5,381,244"/>
+</map>

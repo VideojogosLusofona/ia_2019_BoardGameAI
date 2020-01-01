@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['sequentialai_105',['SequentialAI',['../class_sequential_a_i.html',1,'']]],
+  ['sequentialai_2ecs_106',['SequentialAI.cs',['../_sequential_a_i_8cs.html',1,'']]],
+  ['sequentialaithinker_107',['SequentialAIThinker',['../class_sequential_a_i_thinker.html',1,'']]],
+  ['sequentialaithinker_2ecs_108',['SequentialAIThinker.cs',['../_sequential_a_i_thinker_8cs.html',1,'']]],
+  ['sessioncontroller_109',['SessionController',['../class_session_controller.html',1,'']]],
+  ['sessioncontroller_2ecs_110',['SessionController.cs',['../_session_controller_8cs.html',1,'']]],
+  ['sessionstate_111',['SessionState',['../_session_status_8cs.html#ac82c179a797c0d7c249d1b98a8e3aa8f',1,'SessionStatus.cs']]],
+  ['sessionstatus_2ecs_112',['SessionStatus.cs',['../_session_status_8cs.html',1,'']]],
+  ['sessionview_113',['SessionView',['../class_session_view.html',1,'']]],
+  ['sessionview_2ecs_114',['SessionView.cs',['../_session_view_8cs.html',1,'']]],
+  ['setup_115',['Setup',['../class_a_i_player.html#a4af4dd3362afd7a386c8775678c3c4a2',1,'AIPlayer.Setup()'],['../class_loser_sleeper_a_i.html#aebf0f29a30e6571aef060c281bc54f9d',1,'LoserSleeperAI.Setup()'],['../class_random_a_i.html#aebf0f29a30e6571aef060c281bc54f9d',1,'RandomAI.Setup()'],['../class_sequential_a_i.html#aebf0f29a30e6571aef060c281bc54f9d',1,'SequentialAI.Setup()']]],
+  ['shape_116',['shape',['../struct_piece.html#a003ff98aa327669368655ec51fb84df4',1,'Piece.shape()'],['../struct_future_move.html#a003ff98aa327669368655ec51fb84df4',1,'FutureMove.shape()']]],
+  ['square_117',['Square',['../_p_shape_8cs.html#a00e07dc7f43614733d64deef8e02022eaceb46ca115d05c51aa5a16a8867c3304',1,'PShape.cs']]],
+  ['squarepieces_118',['squarePieces',['../class_board.html#a08e6110ff6bcf1876b85cd8fa6bc821d',1,'Board']]],
+  ['squarepiecesperplayer_119',['squarePiecesPerPlayer',['../class_session_controller.html#adc07f0a5cbd0c7bb1d1d5cfd108b5aa8',1,'SessionController']]],
+  ['standings_120',['Standings',['../interface_i_session_data_provider.html#a82319345fef46fe91a4e95a272f6bd52',1,'ISessionDataProvider.Standings()'],['../class_session_controller.html#a82319345fef46fe91a4e95a272f6bd52',1,'SessionController.Standings()']]],
+  ['startnextmatch_121',['StartNextMatch',['../class_session_view.html#aef48681939a489f5350675e343ea642e',1,'SessionView']]],
+  ['state_122',['State',['../interface_i_session_data_provider.html#ad7e39dc8e57f2dcbc48d05fab4fcb569',1,'ISessionDataProvider.State()'],['../class_session_controller.html#ad7e39dc8e57f2dcbc48d05fab4fcb569',1,'SessionController.State()']]],
+  ['submitmessage_123',['SubmitMessage',['../class_match_view.html#aaaac62f753a59f9ef1a8db41a8c2b423',1,'MatchView']]],
+  ['swapped_124',['Swapped',['../struct_match.html#a4b78e91a2a1ad415356db3976299e43c',1,'Match']]],
+  ['swapplayers_125',['SwapPlayers',['../class_session_view.html#aa71c09198a72f87c71eebe53f50c829c',1,'SessionView']]]
+];

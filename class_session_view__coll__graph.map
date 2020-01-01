@@ -1,0 +1,4 @@
+<map id="SessionView" name="SessionView">
+<area shape="rect" id="node1" title="Script which renders the session UI." alt="" coords="5,307,203,677"/>
+<area shape="rect" id="node2" href="$interface_i_session_data_provider.html" title="Defines a data provider for ColorShapeLinks sessions, which include one or more matches." alt="" coords="11,5,197,244"/>
+</map>

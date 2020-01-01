@@ -1,0 +1,4 @@
+<map id="RandomAIThinker" name="RandomAIThinker">
+<area shape="rect" id="node1" title="Implementation of an AI that will play randomly." alt="" coords="5,131,152,223"/>
+<area shape="rect" id="node2" href="$interface_i_thinker.html" title="The actual AI code of specific AIs should be placed in classes which implement this interface." alt="" coords="41,5,116,83"/>
+</map>

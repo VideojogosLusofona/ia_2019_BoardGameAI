@@ -1,0 +1,4 @@
+<map id="HumanPlayer" name="HumanPlayer">
+<area shape="rect" id="node1" title="Represents a human player, for testing purposes." alt="" coords="5,160,112,267"/>
+<area shape="rect" id="node2" href="$interface_i_player.html" title="Defines a player for the ColorShapeLinks board game." alt="" coords="5,5,112,112"/>
+</map>

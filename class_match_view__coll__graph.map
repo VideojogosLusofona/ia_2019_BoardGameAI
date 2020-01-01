@@ -1,0 +1,7 @@
+<map id="MatchView" name="MatchView">
+<area shape="rect" id="node1" title="Script which renders the matches UI." alt="" coords="179,608,335,1081"/>
+<area shape="rect" id="node2" href="$class_human_move_button.html" title="Script that controls a UI button for performing human moves." alt="" coords="5,219,160,516"/>
+<area shape="rect" id="node3" href="$class_board.html" title="Represents the game board." alt="" coords="185,189,330,545"/>
+<area shape="rect" id="node4" href="$struct_piece.html" title="Represents a board piece." alt="" coords="212,5,303,127"/>
+<area shape="rect" id="node5" href="$interface_i_match_data_provider.html" title="Defines a data provider for ColorShapeLinks matches." alt="" coords="354,299,518,435"/>
+</map>

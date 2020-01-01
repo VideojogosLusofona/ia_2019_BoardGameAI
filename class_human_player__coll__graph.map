@@ -1,0 +1,5 @@
+<map id="HumanPlayer" name="HumanPlayer">
+<area shape="rect" id="node1" title="Represents a human player, for testing purposes." alt="" coords="63,175,169,267"/>
+<area shape="rect" id="node2" href="$interface_i_player.html" title="Defines a player for the ColorShapeLinks board game." alt="" coords="5,5,112,112"/>
+<area shape="rect" id="node3" href="$interface_i_thinker.html" title="The actual AI code of specific AIs should be placed in classes which implement this interface." alt="" coords="136,20,211,97"/>
+</map>
