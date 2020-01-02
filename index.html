@@ -125,13 +125,14 @@ implementation](#ai-implementation)"><code>AIPlayer</code></a> section.</p>
 <p>These classes should be in their own folder, <code>G03VerySmart</code>, which in turn should be placed at <a href="Assets/Scripts/AI/AIs/"><code>Assets/Scripts/AI/AIs/</code></a>. This folder contains some examples of dumb AIs to demonstrate how the code should be organized.</p>
 <p>Students should not modify existing code. If a bug is found in the included Unity project, a fix should be submitted through a <a href="https://github.com/VideojogosLusofona/ia_2019_board_game_ai/compare">pull request</a>, so it becomes available to everyone.</p>
 <h4>The class that extends <code><a class="el" href="class_a_i_player.html" title="Base class for AI player configuration classes.">AIPlayer</a></code></h4>
-<p>This class allows an AI to be found by the game. For that purpose, it must be added as a component of the <code>SessionConfiguration</code> game object, and implement the following read-only properties:</p>
+<p>This class allows an AI to be found by the game, and for the AI to be optionally configured in the Unity editor. For that purpose, it must be added as a component of the <code>SessionConfiguration</code> game object, and implement the following read-only properties:</p>
 <ol type="1">
 <li><code>PlayerName</code>, which should return the <em>string</em> with the AI's name.</li>
 <li><code>Thinker</code>, which should return an instance of the class that implements <a href="Assets/Scripts/AI/IThinker.cs"><code>IThinker</code></a>.</li>
 </ol>
 <p>The instance of the class that implements <a href="Assets/Scripts/AI/IThinker.cs"><code>IThinker</code></a> should be created in the <code>Setup()</code> method, which needs to be overridden when extending <a href="Assets/Scripts/AI/AIPlayer.cs"><code>AIPlayer</code></a>. The <a href="Assets/Scripts/AI/AIs/">example AIs</a> demonstrate how this should be done.</p>
-<p>For AIs that really want to search as long as possible, the time limit is available in the <code>AITimeLimit</code> property, and can be passed to the thinker during its instantiation in the <code>Setup()</code> method.</p>
+<p>For configuring the AI in the Unity editor, the class that extends <a href="Assets/Scripts/AI/AIPlayer.cs"><code>AIPlayer</code></a> can have editable fields (e.g. maximum search depth). Following best practices, these fields should be private and have the [[<code>SerializeField</code>]] attribute.</p>
+<p>For AIs that really want to search as long and deep as possible, the time limit is available in the <code>AITimeLimit</code> property, and can be passed to the thinker during its instantiation in the <code>Setup()</code> method.</p>
 <h4>The class that implements <code><a class="el" href="interface_i_thinker.html" title="The actual AI code of specific AIs should be placed in classes which implement this interface.">IThinker</a></code></h4>
 <p>This class is where the AI should be implemented. The <a href="Assets/Scripts/AI/IThinker.cs"><code>IThinker</code></a> interface defines the <code>Think()</code> method, which accepts the <a href="Assets/Scripts/BoardGame/Board.cs">game board</a> and a <a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">cancellation token</a>, returning a <a href="Assets/Scripts/FutureMove.cs"><code>FutureMove</code></a>. Simply put, the method accepts the game board, the AI decides the best move to perform, and returns that move, which will eventually be executed by the game engine.</p>
 <h5>Cancellation requests</h5>
@@ -161,7 +162,7 @@ implementation](#ai-implementation)"><code>AIPlayer</code></a> section.</p>
 <li>Up to 11: a basic functional Minimax/Negamax search, with a well thought-out heuristic for a game of <em>ColorShapeLinks</em> with standard <a href="https://boardgamegeek.com/boardgame/55810/simplexity">Simplexity</a> rules (7x7 board, 4 in a row win condition), and capable of stop searching when the cancellation token is activated.</li>
 <li>Up to 13: the search is optimized with alpha-beta pruning.</li>
 <li>Up to 15: the search can be used for games of <em>ColorShapeLinks</em> with any board board size and win condition.</li>
-<li>Over 17: the search is optimized with one or more of the following approaches:<ul>
+<li>Over 15: the search is optimized with one or more of the following approaches:<ul>
 <li><a class="el" href="struct_move.html" title="Represents a move already performed.">Move</a> ordering (moves with best potential are searched first).</li>
 <li>Iterative deepening, which returns best solution found before the AI time limit expires.</li>
 <li>Other approaches not discussed in class: Negascout, transposition tables, etc.</li>
@@ -206,8 +207,9 @@ implementation](#ai-implementation)"><code>AIPlayer</code></a> section.</p>
 <ul>
 <li>Author: <a href="https://github.com/fakenmc">Nuno Fachada</a></li>
 <li>Degree: <a href="https://www.ulusofona.pt/en/undergraduate/videogames">Bachelor in Videogames</a></li>
-<li>Institution: <a href="https://www.ulusofona.pt/">Universidade Lusófona de Humanidades e Tecnologias</a> </li>
+<li>Institution: <a href="https://www.ulusofona.pt/">Universidade Lusófona de Humanidades e Tecnologias</a></li>
 </ul>
+<p>[[<code>SerializeField</code>]]:<a href="https://docs.unity3d.com/ScriptReference/SerializeField.html">https://docs.unity3d.com/ScriptReference/SerializeField.html</a> </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
