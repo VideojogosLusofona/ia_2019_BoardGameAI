@@ -100,7 +100,7 @@ implementation](#ai-implementation)"><code>AIPlayer</code></a> section.</p>
 <h3>Fields of the <code><a class="el" href="class_session_controller.html" title="Script which controls ColorShapeLinks sessions, which can include one or more matches.">SessionController</a></code> game object</h3>
 <p>Fields of the <a href="Assets/Scripts/SessionController.cs"><code>SessionController</code></a> script are divided in three sections:</p>
 <ol type="1">
-<li><b><a class="el" href="struct_match.html" title="Represents one match in a session.">Match</a> properties</b> - <a class="el" href="class_board.html" title="Represents the game board.">Board</a> dimensions, win conditions or initial number of pieces per player and last move animation length in seconds.</li>
+<li><b><a class="el" href="struct_match.html" title="Represents one match in a session.">Match</a> properties</b> - <a class="el" href="class_board.html" title="Represents the game board.">Board</a> dimensions, win conditions, initial number of pieces per player and last move animation length in seconds.</li>
 <li><b>AI properties</b> - AI time limit in seconds and minimum AI game move time.</li>
 <li><b>Tournament properties</b> - Points per win, draw, loss, and information screen blocking and duration options.</li>
 </ol>
@@ -119,8 +119,8 @@ implementation](#ai-implementation)"><code>AIPlayer</code></a> section.</p>
 <h3>AI implementation</h3>
 <p>Students should implement a minimum of two classes. For example, if your AI is called <em>G03VerySmart</em>, these classes are as follows:</p>
 <ol type="1">
-<li>**<code>G03VerySmartAI</code>**, which extends <a href="Assets/Scripts/AI/AIPlayer.cs"><code>AIPlayer</code></a>. This class should be added as a component of the <code>SessionConfiguration</code> game object, and allows the AI to be found by the game.</li>
-<li>**<code>G03VerySmartAIThinker</code>**, which implements the <a href="Assets/Scripts/AI/IThinker.cs"><code>IThinker</code></a> interface. This is were the AI should actually be implemented.</li>
+<li>**<code>G03VerySmartAI</code>**, which extends <a href="Assets/Scripts/AI/AIPlayer.cs"><code>AIPlayer</code></a>. This class should be added as a component of the <code>SessionConfiguration</code> game object, and allows the AI to be found by the game and optionally configured in the Unity editor.</li>
+<li>**<code>G03VerySmartAIThinker</code>**, which implements the <a href="Assets/Scripts/AI/IThinker.cs"><code>IThinker</code></a> interface. This is where the AI should actually be implemented.</li>
 </ol>
 <p>These classes should be in their own folder, <code>G03VerySmart</code>, which in turn should be placed at <a href="Assets/Scripts/AI/AIs/"><code>Assets/Scripts/AI/AIs/</code></a>. This folder contains some examples of dumb AIs to demonstrate how the code should be organized.</p>
 <p>Students should not modify existing code. If a bug is found in the included Unity project, a fix should be submitted through a <a href="https://github.com/VideojogosLusofona/ia_2019_board_game_ai/compare">pull request</a>, so it becomes available to everyone.</p>
@@ -177,13 +177,13 @@ implementation](#ai-implementation)"><code>AIPlayer</code></a> section.</p>
 <p>All AIs will face each other in two tournaments:</p>
 <ol type="1">
 <li>The first tournament will be played using standard <a href="https://boardgamegeek.com/boardgame/55810/simplexity">Simplexity</a> rules (7x7 board, 4 in a row win condition) and with a time limit of 0.2 seconds.<ul>
-<li>The top 3 AIs will receive a bonus of 1.5, 1 and 0.5 points in their grade.</li>
+<li>The top 3 AIs will receive a bonus of 1.5, 1 and 0.5 points in their grade, respectively.</li>
 <li>AIs not competent enough to enter the tournament (i.e., they crash or freeze the Unity project, or do not respond to cancellation requests), will be penalized with 1 point in the final grade.</li>
 </ul>
 </li>
 <li>The second tournament will be played using an arbitrary board size, win condition and time limit. These will only be revealed immediately before the tournament starts.<ul>
-<li>AIs capable of simply playing in this tournament will receive 1 bonus point in their grade.</li>
-<li>The top 3 AIs will receive a bonus of 1.5, 1 and 0.5 points in their grade.</li>
+<li>AIs capable of simply playing this tournament will receive 1 bonus point in their grade.</li>
+<li>The top 3 AIs will receive a bonus of 1.5, 1 and 0.5 points in their grade, respectively.</li>
 </ul>
 </li>
 </ol>

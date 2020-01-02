@@ -635,34 +635,48 @@ $(document).ready(function(){initNavTree('_match_view_8cs_source.html','');});
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;                <span class="comment">// If so, let&#39;s post them</span></div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;                <span class="keywordflow">while</span> (messageQueue.Count &gt; 0)</div>
 <div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;                {</div>
-<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;                    <span class="comment">// Get message out of the queue and into the string builder</span></div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;                    messages.Append($<span class="stringliteral">&quot;\n- {messageQueue.Dequeue()}&quot;</span>);</div>
-<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;                    <span class="comment">// Update the text UI widget</span></div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;                    messageBoxText.text = messages.ToString();</div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;                    <span class="comment">// We&#39;ll return in a moment</span></div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;                    yield <span class="keywordflow">return</span> minTimMsgs;</div>
-<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;                }</div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;            }</div>
-<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;            {</div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;                <span class="comment">// If there are no messages in the queue, come back later</span></div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;                yield <span class="keywordflow">return</span> timeAImoves;</div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;            }</div>
-<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;        }</div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;    }</div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160; </div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;    <span class="comment">// Definition of a Unity event class which accepts a color and a shape</span></div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;    [Serializable]</div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;    <span class="keyword">private</span> <span class="keyword">class </span>ColorShapeEvent : UnityEvent&lt;PColor, PShape&gt; { }</div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160; </div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;    <span class="comment">// Unity event which will be invoked when the board is updated</span></div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;    <span class="keyword">private</span> UnityEvent BoardUpdated;</div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160; </div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;    <span class="comment">// Unity event which will be invoked when a shape is selected</span></div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;    <span class="keyword">private</span> ColorShapeEvent ShapeSelected;</div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160; </div>
-<div class="line"><a name="l00596"></a><span class="lineno"><a class="line" href="class_match_view.html#aff7dd7decdad2c2b0dee58c7f35a734c">  596</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">event</span> Action&lt;FutureMove&gt; <a class="code" href="class_match_view.html#aff7dd7decdad2c2b0dee58c7f35a734c">MoveSelected</a>;</div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;}</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;                    <span class="comment">// Maximum message length</span></div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;                    <span class="keywordtype">int</span> maxMsgLen = 5000;</div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;                    <span class="comment">// The messages to display in the text UI</span></div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;                    <span class="keywordtype">string</span> messagesToDisplay;</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;                    <span class="comment">// Get message out of the queue and into the string builder</span></div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;                    messages.Append($<span class="stringliteral">&quot;\n- {messageQueue.Dequeue()}&quot;</span>);</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;                    <span class="comment">// If the string is too long, this may cause an exception</span></div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;                    <span class="comment">// in Unity, so we make sure it isn&#39;t</span></div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;                    <span class="comment">// This is not the best solution, but it works as long as</span></div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;                    <span class="comment">// the user doesn&#39;t want to scroll back to the beginning</span></div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;                    <span class="comment">// Better solutions here:</span></div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;                    <span class="comment">// https://stackoverflow.com/questions/40660868/unity-ui-text-with-markup-tags-string-too-long-for-textmeshgenerator</span></div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;                    <span class="keywordflow">if</span> (messages.Length &gt; maxMsgLen)</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;                        messages.Remove(0, messages.Length - maxMsgLen);</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;                    <span class="comment">// Get the messages to display in string format</span></div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;                    messagesToDisplay = messages.ToString();</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;                    <span class="comment">// Update the text UI widget</span></div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;                    messageBoxText.text = messagesToDisplay;</div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;                    <span class="comment">// We&#39;ll return in a moment</span></div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;                    yield <span class="keywordflow">return</span> minTimMsgs;</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;                }</div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;            }</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;            {</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;                <span class="comment">// If there are no messages in the queue, come back later</span></div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;                yield <span class="keywordflow">return</span> timeAImoves;</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;            }</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;        }</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    }</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160; </div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    <span class="comment">// Definition of a Unity event class which accepts a color and a shape</span></div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    [Serializable]</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    <span class="keyword">private</span> <span class="keyword">class </span>ColorShapeEvent : UnityEvent&lt;PColor, PShape&gt; { }</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160; </div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;    <span class="comment">// Unity event which will be invoked when the board is updated</span></div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    <span class="keyword">private</span> UnityEvent BoardUpdated;</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160; </div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;    <span class="comment">// Unity event which will be invoked when a shape is selected</span></div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;    <span class="keyword">private</span> ColorShapeEvent ShapeSelected;</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160; </div>
+<div class="line"><a name="l00610"></a><span class="lineno"><a class="line" href="class_match_view.html#aff7dd7decdad2c2b0dee58c7f35a734c">  610</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">event</span> Action&lt;FutureMove&gt; <a class="code" href="class_match_view.html#aff7dd7decdad2c2b0dee58c7f35a734c">MoveSelected</a>;</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_match_view_html"><div class="ttname"><a href="class_match_view.html">MatchView</a></div><div class="ttdoc">Script which renders the matches UI.</div><div class="ttdef"><b>Definition:</b> <a href="_match_view_8cs_source.html#l00026">MatchView.cs:26</a></div></div>
@@ -670,7 +684,7 @@ $(document).ready(function(){initNavTree('_match_view_8cs_source.html','');});
 <div class="ttc" id="astruct_pos_html_acd88689f975a2cb9a8ba6ae9fb99139e"><div class="ttname"><a href="struct_pos.html#acd88689f975a2cb9a8ba6ae9fb99139e">Pos.col</a></div><div class="ttdeci">readonly int col</div><div class="ttdoc">Board column.</div><div class="ttdef"><b>Definition:</b> <a href="_pos_8cs_source.html#l00015">Pos.cs:15</a></div></div>
 <div class="ttc" id="ainterface_i_match_data_provider_html_a9e1cfe27e71824b9872a18bae93e855d"><div class="ttname"><a href="interface_i_match_data_provider.html#a9e1cfe27e71824b9872a18bae93e855d">IMatchDataProvider.GetPlayer</a></div><div class="ttdeci">IPlayer GetPlayer(PColor player)</div><div class="ttdoc">Get player of the specified color.</div></div>
 <div class="ttc" id="aclass_board_html_ac6b859492685128681a7a80660eed7df"><div class="ttname"><a href="class_board.html#ac6b859492685128681a7a80660eed7df">Board.PieceCount</a></div><div class="ttdeci">int PieceCount(PColor color, PShape shape)</div><div class="ttdoc">Get number of remaining pieces with the given color and shape.</div></div>
-<div class="ttc" id="aclass_match_view_html_aff7dd7decdad2c2b0dee58c7f35a734c"><div class="ttname"><a href="class_match_view.html#aff7dd7decdad2c2b0dee58c7f35a734c">MatchView.MoveSelected</a></div><div class="ttdeci">Action&lt; FutureMove &gt; MoveSelected</div><div class="ttdoc">Native C# event which will be invoked when a move is selected in the UI.</div><div class="ttdef"><b>Definition:</b> <a href="_match_view_8cs_source.html#l00596">MatchView.cs:596</a></div></div>
+<div class="ttc" id="aclass_match_view_html_aff7dd7decdad2c2b0dee58c7f35a734c"><div class="ttname"><a href="class_match_view.html#aff7dd7decdad2c2b0dee58c7f35a734c">MatchView.MoveSelected</a></div><div class="ttdeci">Action&lt; FutureMove &gt; MoveSelected</div><div class="ttdoc">Native C# event which will be invoked when a move is selected in the UI.</div><div class="ttdef"><b>Definition:</b> <a href="_match_view_8cs_source.html#l00610">MatchView.cs:610</a></div></div>
 <div class="ttc" id="aclass_human_move_button_html"><div class="ttname"><a href="class_human_move_button.html">HumanMoveButton</a></div><div class="ttdoc">Script that controls a UI button for performing human moves.</div><div class="ttdef"><b>Definition:</b> <a href="_human_move_button_8cs_source.html#l00015">HumanMoveButton.cs:15</a></div></div>
 <div class="ttc" id="ainterface_i_match_data_provider_html_a8ebe3124271136298fd68feca4763b1c"><div class="ttname"><a href="interface_i_match_data_provider.html#a8ebe3124271136298fd68feca4763b1c">IMatchDataProvider.LastMoveAnimLength</a></div><div class="ttdeci">float LastMoveAnimLength</div><div class="ttdoc">Last move animation length in seconds.</div><div class="ttdef"><b>Definition:</b> <a href="_i_match_data_provider_8cs_source.html#l00036">IMatchDataProvider.cs:36</a></div></div>
 <div class="ttc" id="aclass_human_move_button_html_aa2883edf3ccc77815c7ca63d9c4a97fa"><div class="ttname"><a href="class_human_move_button.html#aa2883edf3ccc77815c7ca63d9c4a97fa">HumanMoveButton.Column</a></div><div class="ttdeci">int Column</div><div class="ttdoc">Board column to which the button is associated.</div><div class="ttdef"><b>Definition:</b> <a href="_human_move_button_8cs_source.html#l00045">HumanMoveButton.cs:45</a></div></div>
